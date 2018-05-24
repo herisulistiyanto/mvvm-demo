@@ -1,0 +1,87 @@
+def Group(Closure closure) {
+    closure.delegate = dependencies
+    return closure
+}
+
+ext {
+
+    kotlin = Group {
+        implementation deps.kotlin.lib
+        implementation deps.kotlin.ktx
+        implementation deps.kotlin.coroutines
+    }
+
+    rx = Group {
+        implementation deps.rx.android
+        implementation deps.rx.java
+    }
+
+    dagger = Group {
+        implementation deps.dagger.dagger
+        kapt deps.dagger.compiler
+        implementation deps.dagger.android
+        implementation deps.dagger.support
+        kapt deps.dagger.processor
+    }
+
+    networking = Group {
+        implementation deps.retrofit.retrofit
+        implementation deps.retrofit.moshi
+        implementation deps.retrofit.rx
+
+        implementation deps.okHttp.okHttp
+        implementation deps.okHttp.logging
+
+        implementation deps.moshi
+        implementation deps.kotshi.kotshi
+        kapt deps.kotshi.compiler
+    }
+
+    architectureComponents = Group {
+        implementation deps.arch.viewModel
+        implementation deps.arch.liveData
+        implementation deps.arch.extensions
+        implementation deps.arch.streams
+        kapt deps.arch.compiler
+    }
+
+    support = Group {
+        implementation deps.support.compat
+        implementation deps.support.app
+        implementation deps.support.cardView
+        implementation deps.support.recyclerView
+        implementation deps.support.design
+        implementation deps.support.constraint
+    }
+
+    glide = Group {
+        implementation deps.glide.glide
+        implementation deps.glide.integration
+        kapt deps.glide.compiler
+    }
+
+    room = Group {
+        implementation deps.room.runtime
+        implementation deps.room.rx
+        kapt deps.room.compiler
+    }
+
+    debugging = Group {
+        implementation deps.timber
+    }
+
+    // TESTING
+    testing = Group {
+        testImplementation(deps.jUnit) { exclude group: 'org.hamcrest' }
+        testImplementation deps.truth
+
+        testImplementation deps.mockito.core
+        testImplementation deps.mockito.inline
+
+        testImplementation(deps.robolectric) { exclude group: 'org.assertj' }
+
+        testImplementation deps.arch.testing
+        testImplementation deps.room.testing
+    }
+
+}

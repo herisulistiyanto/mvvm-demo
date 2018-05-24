@@ -1,0 +1,33 @@
+ext.versions = [
+        // BUILD
+        'kotlin'         : '1.2.41',
+        'gradle'         : '3.2.0-alpha15',
+        'buildTools'     : '27.0.3',
+        'minSdk'         : 21,
+        'targetSdk'      : 27,
+
+        // MAIN
+        'support'        : '27.1.1',
+        'okHttp'         : '3.8.1',
+        'rxJava'         : '2.1.7',
+        'rxAndroid'      : '2.0.1',
+        'retrofit'       : '2.3.0',
+        'glide'          : '4.4.0',
+        'glideOkHttp'    : '1.5.0',
+        'dagger'         : '2.12',
+        'constrainLayout': '1.1.0',
+        'anko'           : '0.10.5',
+        'timber'         : '4.5.1',
+        'moshi'          : '1.6.0',
+        'kotshi'         : '1.0.4',
+        'architecture'   : '1.1.1',
+        'room'           : '1.1.0',
+        'ktx'            : '0.3',
+        'coroutine'      : '0.22.5',
+
+        // TESTING
+        'jUnit'       : '4.12',
+        'truth'       : '0.40',
+        'mockito'     : '2.10.0',
+        'robolectric' : '3.4.2',
+]
